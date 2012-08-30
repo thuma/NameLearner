@@ -65,6 +65,9 @@ class MyFrame(wx.Frame):
                             total = total + filename + ","
             bilder = total.split(",")
             visa = random.randint(0, len(bilder)-2)
+            bfil = bilder[visa].split(".")[0]+"B.png"
+            if os.path.exists(bfil):
+                self.stod.SetBitmap(wx.Bitmap(bfil, wx.BITMAP_TYPE_ANY))
             self.elev.SetBitmap(wx.Bitmap(bilder[visa], wx.BITMAP_TYPE_ANY))
             print bilder[visa]
             namnnu = bilder[visa].split(".")[0]
