@@ -58,10 +58,11 @@ class MyFrame(wx.Frame):
             self.namnruta.Clear()
             for filename in os.listdir(".\\"):
                 delar = filename.split(".")
-                if delar[1] == "png":
-                    if delar[0][-1] != "B":
-                        if delar[0][0:6] != "noname":
-                            total = total + filename + ","
+                if len(delar) > 1:
+                    if delar[1] == "png":
+                        if delar[0][-1] != "B":
+                            if delar[0][0:6] != "noname":
+                                total = total + filename + ","
             bilder = total.split(",")
             visa = random.randint(0, len(bilder)-2)
             bfil = bilder[visa].split(".")[0]+"B.png"
