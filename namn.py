@@ -54,7 +54,6 @@ class MyFrame(wx.Frame):
     def namnok(self, event):  # wxGlade: MyFrame.<event_handler>
         total = ""
         global namnnu
-        print self.namnruta.GetValue()
         if self.namnruta.GetValue() == namnnu:
             self.namnruta.Clear()
             for filename in os.listdir(".\\"):
@@ -68,9 +67,12 @@ class MyFrame(wx.Frame):
             bfil = bilder[visa].split(".")[0]+"B.png"
             if os.path.exists(bfil):
                 self.stod.SetBitmap(wx.Bitmap(bfil, wx.BITMAP_TYPE_ANY))
+            else:
+                self.stod.SetBitmap(wx.Bitmap("nonameB.png", wx.BITMAP_TYPE_ANY))
             self.elev.SetBitmap(wx.Bitmap(bilder[visa], wx.BITMAP_TYPE_ANY))
-            print bilder[visa]
             namnnu = bilder[visa].split(".")[0]
+        else:
+            print namnnu
         event.Skip()
 
 # end of class MyFrame
