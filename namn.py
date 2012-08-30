@@ -71,6 +71,8 @@ class MyFrame(wx.Frame):
                 self.stod.SetBitmap(wx.Bitmap("nonameB.png", wx.BITMAP_TYPE_ANY))
             self.elev.SetBitmap(wx.Bitmap(bilder[visa], wx.BITMAP_TYPE_ANY))
             namnnu = bilder[visa].split(".")[0]
+            self.Hide()
+            self.Show()
         else:
             print namnnu
         event.Skip()
