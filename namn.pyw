@@ -19,6 +19,7 @@ class MyFrame(wx.Frame):
         self.stod = wx.StaticBitmap(self, -1, wx.Bitmap("nonameB.png", wx.BITMAP_TYPE_ANY))
         self.namnruta = wx.TextCtrl(self, -1, "")
         self.OK = wx.Button(self, -1, "OK")
+        self.Visanamn = wx.StaticText(self, -1, "")
 
         self.__set_properties()
         self.__do_layout()
@@ -44,6 +45,7 @@ class MyFrame(wx.Frame):
         ram2.Add(delareuppe, 0, wx.ALIGN_CENTER_HORIZONTAL, 0)
         delarenere.Add(self.namnruta, 0, 0, 0)
         delarenere.Add(self.OK, 0, 0, 0)
+        delarenere.Add(self.Visanamn, 0, 0, 0)
         ram2.Add(delarenere, 0, wx.ALIGN_CENTER_HORIZONTAL | wx.ALIGN_CENTER_VERTICAL, 0)
         topram.Add(ram2, 0, wx.EXPAND | wx.ALIGN_CENTER_HORIZONTAL | wx.ALIGN_CENTER_VERTICAL, 0)
         self.SetSizer(topram)
@@ -71,11 +73,12 @@ class MyFrame(wx.Frame):
             else:
                 self.stod.SetBitmap(wx.Bitmap("nonameB.png", wx.BITMAP_TYPE_ANY))
             self.elev.SetBitmap(wx.Bitmap(bilder[visa], wx.BITMAP_TYPE_ANY))
+            self.Visanamn.SetLabel("")
             namnnu = bilder[visa].split(".")[0]
             self.Hide()
             self.Show()
         else:
-            print namnnu
+            self.Visanamn.SetLabel(namnnu)
         event.Skip()
 
 # end of class MyFrame
