@@ -76,6 +76,7 @@ class MyFrame(wx.Frame):
             self.Visanamn.SetLabel("")
             namnnu = bilder[visa].split(".")[0]
             self.Hide()
+            self.Layout()
             self.Show()
         else:
             self.Visanamn.SetLabel(namnnu)
