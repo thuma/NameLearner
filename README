@@ -1,7 +1,8 @@
-This script will look in the script folder for images(png) with names.
-If one enter the correct a random other will be shown. 
+This script will look in the script folder for images(png).
+The scritpt will then present the image to the user and ask for the name of the image.
+If one enter the correct name, a random other image will be shown. 
 The names are not shown. The file names ending with B will be 
-added to the side of the file with out a B. The B file can be used to 
+added to the side of the file without a B. The B file can be used to 
 hint the user about what the name is.
 
-Requires wxWidgets
+Requires wxWidgets.
